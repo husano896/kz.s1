@@ -10,14 +10,41 @@
   <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
   <!-- Tocas UI：CSS 與元件 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+  <style type="text/css">
+	#intro {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #3C4252;
+		z-index: 99999;
+		cursor: wait;
+    }
+
+	#intro .center {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+  </style>
 <link rel="stylesheet" href="styles.0a457a265bc8794679f3.css"></head>
 <body>
-	<app-root>Loading</app-root>
+	<app-root>
+		<intro>
+			<div class="center">
+				<h3>讀取中...</h3>
+			</div>
+		</intro>
+	</app-root>
 
 	<!-- Tocas JS：模塊與 JavaScript 函式 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
 	<noscript>
 	  <p>本網站需要JavaScript才能正常運作;w;</p>
 	</noscript>
-<script type="text/javascript" src="runtime.76b72f2c30d5f6b6a91e.js"></script><script type="text/javascript" src="polyfills.a5acfd4a5754e593d36f.js"></script><script type="text/javascript" src="main.b20d2ae2637cbec446de.js"></script></body>
+<script type="text/javascript" src="runtime.2cebaac3591cc8d924c8.js"></script><script type="text/javascript" src="polyfills.a5acfd4a5754e593d36f.js"></script><script type="text/javascript" src="main.b20d2ae2637cbec446de.js"></script></body>
 </html>
