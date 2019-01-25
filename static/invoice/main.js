@@ -60,7 +60,7 @@ var app = new Vue({
 		else {
 		  //六獎
 		  for (var num of this.六獎) {
-			if (num == n) {
+			if (n.endsWith(num)) {
 	　　　　  m += 200
 	          alert("中了六獎！")
 	        }
