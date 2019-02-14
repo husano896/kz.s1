@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>對發票！</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tocas UI：CSS 與元件 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+  <!-- 洨洨安 CSS -->
+  <link rel="stylesheet" href="https://xiaoan.tocas-ui.com/ts.xiaoan.min.css">
+  <style type="text/css">
+        .ts.segment {
+            margin: 0 auto;
+            width: 300px;
+        }
+        .button {
+            border: 0 !important
+        }
+		
+		._portrait-only {
+			@media screen and (orientation: landscape) {
+				display: none !important;
+			}
+		}
+
+		._landscape-only {
+			@media screen and (orientation: portrait) {
+				display: none !important;
+			}
+		}
+		.bingoClr {
+			color: red !important;
+		}
+   </style>
+</head>
+
+<body>
+	<!-- Tocas JS：模塊與 JavaScript 函式 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+	<!-- 洨洨安 JS -->
+	<script src="https://xiaoan.tocas-ui.com/ts.xiaoan.min.js"></script>
+	<!-- 歡樂的主網頁-->
+	<div id="app1">
+	    <!-- 主要文字容器 -->
+		<div class="ts very padded text container">
+			<h3 class="ts center aligned icon header">
+				對發票
+				<div class="sub header">{{ titlemsg }}</div>
+			</h3>
+			<div class="ts fluid input">
+                <input type="text" placeholder="輸入發票號碼" v-model="InNumber">
+				<button v-bind:disabled="isNumberInvaild()" v-bind:class="class_Button_Obj()" @click="check" class="ts button">檢查</button>
+            </div>
+			
+			<div class="ts divider"></div>
+			<!-- 頂部附著按鈕群組 -->
+			<div class="mobile only">
+				<div class="ts fluid top attached buttons">
+					<button class="ts button" @click="addNumber(7)">7</button>
+					<button class="ts button" @click="addNumber(8)">8</button>
+					<button class="ts button" @click="addNumber(9)">9</button>
+				</div>
+				<!-- / 頂部附著按鈕群組 -->
+
+				<!-- 中間附著按鈕群組 -->
+				<div class="ts fluid attached buttons">
+					<button class="ts button" @click="addNumber(4)">4</button>
+					<button class="ts button" @click="addNumber(5)">5</button>
+					<button class="ts button" @click="addNumber(6)">6</button>
+				</div>
+				<!-- / 中間附著按鈕群組 -->
+
+				<!-- 中間附著按鈕群組 -->
+				<div class="ts fluid attached buttons">
+					<button class="ts button" @click="addNumber(1)">1</button>
+					<button class="ts button" @click="addNumber(2)">2</button>
+					<button class="ts button" @click="addNumber(3)">3</button>
+				</div>
+				<!-- / 中間附著按鈕群組 -->
+
+				<!-- 底部附著按鈕群組 -->
+				<div class="ts fluid bottom attached buttons">
+					<button class="ts button" @click="addNumber(0)">0</button>
+					<button class="ts warning button" @click="removeNumber()">←</button>
+					<button class="ts negative button" @click="removeAllNumber()">Clear</button>
+				</div>
+				<!-- / 底部附著按鈕群組 -->
+				<div class="ts divider"></div>
+			</div>
+			
+			<div>
+				<i class="list icon"></i>張數：{{張數}}
+				<i class="money icon"></i>金額：<span v-bind:class="class_Bingo_Obj()">{{金額}}</span>
+			</div>
+			<div>
+				<table style="width:100%">
+					<tr>
+						<th>號碼</th>
+						<th>獎項</th>
+					</tr>
+					<tr v-for="item in 輸入過">
+						<td>{{item.number}}</td>
+						<td v-bind:class="class_BingoItem_Obj(item.price)">{{item.price}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- / 主要文字容器 -->
+	</div>
+		
+	<!-- /歡樂的主網頁-->
+		
+	<!-- 更歡樂的js朋友們 -->
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="main.js"></script>
+</body>
