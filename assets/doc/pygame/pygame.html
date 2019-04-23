@@ -1,0 +1,5 @@
+The pygame package represents the top-level package for others to use. Pygame itself is broken into many submodules, but this does not affect programs that use pygame.
+
+As a convenience, most of the top-level variables in pygame have been placed inside a module named 'pygame.locals'. This is meant to be used with 'from pygame.localspygame constants import *', in addition to 'import pygame'.
+
+When you 'import pygame' all available pygame submodules are automatically imported. Be aware that some of the pygame modules are considered "optional", and may not be available. In that case, pygame will provide a placeholder object instead of the module, which can be used to test for availability.
